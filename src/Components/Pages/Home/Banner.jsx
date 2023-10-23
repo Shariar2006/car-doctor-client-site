@@ -17,10 +17,11 @@ const Banner = () => {
                             <h1 className='text-6xl font-bold text-white '>Affordable Price For Car Servicing</h1>
                             <p className=''>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                             <div className='flex gap-4'>
-                                <button className="btn btn-active text-white bg-[#FF3811] border-none">Secondary</button>
-                                <button className="btn btn-outline btn-secondary">Secondary</button>
+                                <button className="btn btn-active text-white bg-[#FF3811] hover:text-[#FF3811] border-none">Discover More</button>
+                                <button className="btn btn-outline border-white text-white">Latest Project</button>
 
-                            </div></div>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="absolute flex justify-end gap-3 bottom-0 transform  -translate-y-1/2 left-5 right-5 ">
@@ -32,6 +33,17 @@ const Banner = () => {
 
                 <div id="slide2" className="carousel-item relative w-full h-[90vh]">
                     <img src={img2} className="w-full" />
+                    <div className="absolute h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]  left-0 right-0  ">
+                        <div className='w-1/3 space-y-5 ml-7 text-white'>
+                            <h1 className='text-6xl font-bold text-white '>Affordable Price For Car Servicing</h1>
+                            <p className=''>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                            <div className='flex gap-4'>
+                                <button className="btn btn-active text-white bg-[#FF3811] hover:text-[#FF3811] border-none">Discover More</button>
+                                <button className="btn btn-outline border-white text-white">Latest Project</button>
+
+                            </div>
+                        </div>
+                    </div>
                     <div className="absolute flex justify-end gap-3 bottom-0 transform  -translate-y-1/2 left-5 right-5 ">
                         <a href="#slide1" className="btn btn-circle hover:bg-[#FF3811] hover:text-white">❮</a>
                         <a href="#slide3" className="btn btn-circle hover:bg-[#FF3811] hover:text-white">❯</a>
@@ -39,6 +51,17 @@ const Banner = () => {
                 </div>
                 <div id="slide3" className="carousel-item relative w-full h-[90vh]">
                     <img src={img3} className="w-full" />
+                    <div className="absolute h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]  left-0 right-0  ">
+                        <div className='w-1/3 space-y-5 ml-7 text-white'>
+                            <h1 className='text-6xl font-bold text-white '>Affordable Price For Car Servicing</h1>
+                            <p className=''>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                            <div className='flex gap-4'>
+                                <button className="btn btn-active text-white bg-[#FF3811] hover:text-[#FF3811] border-none">Discover More</button>
+                                <button className="btn btn-outline border-white text-white">Latest Project</button>
+
+                            </div>
+                        </div>
+                    </div>
                     <div className="absolute flex justify-end gap-3 bottom-0 transform  -translate-y-1/2 left-5 right-5 ">
                         <a href="#slide2" className="btn btn-circle hover:bg-[#FF3811] hover:text-white">❮</a>
                         <a href="#slide4" className="btn btn-circle hover:bg-[#FF3811] hover:text-white">❯</a>
@@ -46,6 +69,17 @@ const Banner = () => {
                 </div>
                 <div id="slide4" className="carousel-item relative w-full h-[90vh]">
                     <img src={img4} className="w-full" />
+                    <div className="absolute h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]  left-0 right-0  ">
+                        <div className='w-1/3 space-y-5 ml-7 text-white'>
+                            <h1 className='text-6xl font-bold text-white '>Affordable Price For Car Servicing</h1>
+                            <p className=''>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                            <div className='flex gap-4'>
+                                <button className="btn btn-active text-white bg-[#FF3811] hover:text-[#FF3811] border-none">Discover More</button>
+                                <button className="btn btn-outline border-white text-white">Latest Project</button>
+
+                            </div>
+                        </div>
+                    </div>
                     <div className="absolute flex justify-end gap-3 bottom-0 transform  -translate-y-1/2 left-5 right-5 ">
                         <a href="#slide3" className="btn btn-circle hover:bg-[#FF3811] hover:text-white">❮</a>
                         <a href="#slide5" className="btn btn-circle hover:bg-[#FF3811] hover:text-white">❯</a>
@@ -53,6 +87,17 @@ const Banner = () => {
                 </div>
                 <div id="slide5" className="carousel-item relative w-full h-[90vh]">
                     <img src={img5} className="w-full" />
+                    <div className="absolute h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]  left-0 right-0  ">
+                        <div className='w-1/3 space-y-5 ml-7 text-white'>
+                            <h1 className='text-6xl font-bold text-white '>Affordable Price For Car Servicing</h1>
+                            <p className=''>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                            <div className='flex gap-4'>
+                                <button className="btn btn-active text-white bg-[#FF3811] hover:text-[#FF3811] border-none">Discover More</button>
+                                <button className="btn btn-outline border-white text-white">Latest Project</button>
+
+                            </div>
+                        </div>
+                    </div>
                     <div className="absolute flex justify-end gap-3 bottom-0 transform  -translate-y-1/2 left-5 right-5 ">
                         <a href="#slide4" className="btn btn-circle hover:bg-[#FF3811] hover:text-white">❮</a>
                         <a href="#slide6" className="btn btn-circle hover:bg-[#FF3811] hover:text-white">❯</a>
@@ -60,6 +105,17 @@ const Banner = () => {
                 </div>
                 <div id="slide6" className="carousel-item relative w-full h-[90vh]">
                     <img src={img6} className="w-full" />
+                    <div className="absolute h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]  left-0 right-0  ">
+                        <div className='w-1/3 space-y-5 ml-7 text-white'>
+                            <h1 className='text-6xl font-bold text-white '>Affordable Price For Car Servicing</h1>
+                            <p className=''>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                            <div className='flex gap-4'>
+                                <button className="btn btn-active text-white bg-[#FF3811] hover:text-[#FF3811] border-none">Discover More</button>
+                                <button className="btn btn-outline border-white text-white">Latest Project</button>
+
+                            </div>
+                        </div>
+                    </div>
                     <div className="absolute flex justify-end gap-3 bottom-0 transform  -translate-y-1/2 left-5 right-5 ">
                         <a href="#slide5" className="btn btn-circle hover:bg-[#FF3811] hover:text-white">❮</a>
                         <a href="#slide1" className="btn btn-circle hover:bg-[#FF3811] hover:text-white">❯</a>
