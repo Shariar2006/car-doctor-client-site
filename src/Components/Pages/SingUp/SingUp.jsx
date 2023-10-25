@@ -3,30 +3,32 @@ import loginImg from "../../../assets/images/login/login.svg"
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 
-const Login = () => {
-    const {loginUser} = useContext(AuthContext)
-    const handleLogin = e=>{
-        e.preventDefault()
+
+const SingUp = () => {
+    const {createUser} = useContext(AuthContext)
+    const handleSingUp = e=>{
+        e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
-        loginUser(email, password)
+        createUser(email, password)
         .then(result => {
             console.log(result.user)
         })
         .catch(error=>{console.log(error)})
+        
     }
     return (
         <div>
-            <div className="hero min-h-screen ">
+             <div className="hero min-h-screen ">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="text-center lg:text-left w-1/2 mr-10">
                         <img src={loginImg} alt="" />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm border bg-base-100">
-                        <h1 className="text-3xl font-bold pt-10 text-center">Login</h1>
-                        <form onSubmit={handleLogin} className="card-body font-semibold">
+                        <h1 className="text-3xl font-bold pt-10 text-center">Sing Up</h1>
+                        <form onSubmit={handleSingUp} className="card-body font-semibold">
                             <div className="form-control ">
                                 <label className="label">
                                     <span className="label-text ">Email</span>
@@ -43,7 +45,7 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn bg-[#FF3811] text-white hover:bg-[#FF3811]" type="submit" value="Login" />
+                                <input className="btn bg-[#FF3811] text-white hover:bg-[#FF3811]" type="submit" value="Sing Up" />
                             </div>
                         </form>
                         <div className="text-center pb-5">
@@ -89,7 +91,7 @@ const Login = () => {
                                 </div>
 
                             </div>
-                            <p className="my-10 font-semibold">New to cars doctor? <Link to="/singUp" className="text-[#FF3811] font-bold">Sign Up</Link></p>
+                            <p className="my-10 font-semibold">Have an account? <Link to="/login" className="text-[#FF3811] font-bold">Sign In</Link></p>
                         </div>
                     </div>
                 </div>
@@ -98,4 +100,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default SingUp;
