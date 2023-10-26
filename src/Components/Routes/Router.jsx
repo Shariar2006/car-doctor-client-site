@@ -3,6 +3,7 @@ import Main from "../Main/Main";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import SingUp from "../Pages/SingUp/SingUp";
+import CheckOut from "../Pages/CheakOut/CheckOut";
 
 
     const Router = createBrowserRouter([
@@ -13,7 +14,7 @@ import SingUp from "../Pages/SingUp/SingUp";
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('/servises.json')
+                loader: () => fetch('http://localhost:5000/services')
             },
             {
               path: "/login",
@@ -22,6 +23,14 @@ import SingUp from "../Pages/SingUp/SingUp";
             {
               path: "/singUp",
               element: <SingUp></SingUp>
+            },
+            {
+              path: "/service/:id",
+              element:<CheckOut></CheckOut>,
+              loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+              
             }
           ]
         },
