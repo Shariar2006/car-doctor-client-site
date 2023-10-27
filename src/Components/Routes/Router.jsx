@@ -4,6 +4,8 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import SingUp from "../Pages/SingUp/SingUp";
 import CheckOut from "../Pages/CheakOut/CheckOut";
+import Orders from "../Pages/Orders/Orders";
+import Private from "./Private";
 
 
     const Router = createBrowserRouter([
@@ -30,7 +32,8 @@ import CheckOut from "../Pages/CheakOut/CheckOut";
               loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
-              
+              path: "/orders",
+              element: <Private><Orders></Orders></Private>
             }
           ]
         },
