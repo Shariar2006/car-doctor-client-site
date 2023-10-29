@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 
 const Private = ({children}) => {
     const {user, loading} = useContext(AuthContext)
+    const location = useLocation()
     if(user?.email){
         return children
     }
@@ -14,7 +15,7 @@ const Private = ({children}) => {
              <span className="loading loading-bars loading-lg"></span>
         </div>
     }
-    return <Navigate to="/login" replace></Navigate>
+    return <Navigate state={location?.pathname} to="/login" replace></Navigate>
 };
 
 export default Private;

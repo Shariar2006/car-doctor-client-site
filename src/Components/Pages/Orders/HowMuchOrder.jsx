@@ -1,16 +1,16 @@
 /* eslint-disable react/prop-types */
 
 
-const HowMuchOrder = ({ order, serviceDelete }) => {
-    const { img, _id, date, email, phone, firstName, lastName, title, price } = order || {}
+const HowMuchOrder = ({ order, serviceDelete, handleOrderConfirm }) => {
+    const { img, _id, date, email, phone, firstName, lastName, title, price, status } = order || {}
 
-    
+
 
     return (
 
         <tr className="">
             <th>
-                <button onClick={()=>serviceDelete(_id)} className="btn btn-circle btn-outline">
+                <button onClick={() => serviceDelete(_id)} className="btn btn-circle btn-outline">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
             </th>
@@ -34,7 +34,11 @@ const HowMuchOrder = ({ order, serviceDelete }) => {
             <td className="font-bold">{price}</td>
             <td className="font-bold">{date}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                {
+                    status === 'confirm' ?
+                        <span className="font-bold text-primary">Confirmed</span> :
+                        <button onClick={() => handleOrderConfirm(_id)} className="btn btn-ghost btn-xs">Confirm</button>
+                }
             </th>
         </tr>
 

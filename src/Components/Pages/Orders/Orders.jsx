@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import HowMuchOrder from "./HowMuchOrder";
+import axios from "axios";
 
 
 const Orders = () => {
@@ -9,11 +10,17 @@ const Orders = () => {
     const url = `http://localhost:5000/orderedService/?email=${user?.email}`
 
     useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data =>
-                setOrders(data))
-    }, [])
+
+        axios.get(url, {withCredentials: true})
+        .then(res=>{
+            setOrders(res.data)
+        })
+
+        // fetch(url)
+        //     .then(res => res.json())
+        //     .then(data =>
+        //         setOrders(data))
+    }, [url])
     const serviceDelete = id => {
         const proceed = confirm('Are you sure you want to delete');
         if (proceed) {
@@ -30,6 +37,26 @@ const Orders = () => {
                 })
         }
     }
+    const handleOrderConfirm = id => {
+        fetch(`http://localhost:5000/orderedService/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ status: 'confirm' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    alert('Your order confirm')
+                    const remaining = orders.filter(order => order._id !== id);
+                    const updateStatus = orders.find(order=> order._id === id)
+                    updateStatus.status = 'confirm'
+                    const newOrders = [updateStatus, ...remaining]
+                    setOrders(newOrders)
+                }
+            })
+    }
 
     return (
         <div>
@@ -42,7 +69,7 @@ const Orders = () => {
                             <th>Delete</th>
                             <th>Service Img</th>
                             <th>Service Name</th>
-                            <th>Customer Name</th>
+                            <th>Customer Details</th>
                             <th>Service Price</th>
                             <th>Service Ordered date</th>
                             <th>Status</th>
@@ -51,7 +78,13 @@ const Orders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders?.map(order => <HowMuchOrder key={order._id} order={order} serviceDelete={serviceDelete}></HowMuchOrder>)
+                            orders?.map(order =>
+                                <HowMuchOrder
+                                    key={order._id}
+                                    order={order}
+                                    serviceDelete={serviceDelete}
+                                    handleOrderConfirm={handleOrderConfirm}
+                                ></HowMuchOrder>)
                         }
                     </tbody>
                     {/* foot */}
